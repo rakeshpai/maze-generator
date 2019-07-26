@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should return unvisited neighbours 1`] = `
+Array [
+  Object {
+    "location": "right",
+    "visited": false,
+    "walls": Object {
+      "bottom": true,
+      "left": true,
+      "right": true,
+      "top": true,
+    },
+    "x": 0,
+    "y": 1,
+  },
+  Object {
+    "location": "bottom",
+    "visited": false,
+    "walls": Object {
+      "bottom": true,
+      "left": true,
+      "right": true,
+      "top": true,
+    },
+    "x": 1,
+    "y": 0,
+  },
+]
+`;
+
+exports[`should return unvisited neighbours 2`] = `
+Array [
+  Object {
+    "location": "top",
+    "visited": false,
+    "walls": Object {
+      "bottom": true,
+      "left": true,
+      "right": true,
+      "top": true,
+    },
+    "x": 4,
+    "y": 5,
+  },
+  Object {
+    "location": "left",
+    "visited": false,
+    "walls": Object {
+      "bottom": true,
+      "left": true,
+      "right": true,
+      "top": true,
+    },
+    "x": 5,
+    "y": 4,
+  },
+  Object {
+    "location": "right",
+    "visited": false,
+    "walls": Object {
+      "bottom": true,
+      "left": true,
+      "right": true,
+      "top": true,
+    },
+    "x": 5,
+    "y": 6,
+  },
+  Object {
+    "location": "bottom",
+    "visited": false,
+    "walls": Object {
+      "bottom": true,
+      "left": true,
+      "right": true,
+      "top": true,
+    },
+    "x": 6,
+    "y": 5,
+  },
+]
+`;
+
+exports[`should return unvisited neighbours 3`] = `
+Array [
+  Object {
+    "location": "top",
+    "visited": false,
+    "walls": Object {
+      "bottom": true,
+      "left": true,
+      "right": true,
+      "top": true,
+    },
+    "x": 3,
+    "y": 5,
+  },
+  Object {
+    "location": "left",
+    "visited": false,
+    "walls": Object {
+      "bottom": true,
+      "left": true,
+      "right": true,
+      "top": true,
+    },
+    "x": 4,
+    "y": 4,
+  },
+  Object {
+    "location": "right",
+    "visited": false,
+    "walls": Object {
+      "bottom": true,
+      "left": true,
+      "right": true,
+      "top": true,
+    },
+    "x": 4,
+    "y": 6,
+  },
+]
+`;
