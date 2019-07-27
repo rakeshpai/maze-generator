@@ -12,16 +12,21 @@ type MazeOptions = {
 const useMaze = ({
   width, height,
   animated, timeout
-} : MazeOptions) => {
+} : MazeOptions): [ Maze | undefined, boolean ] => {
   const [ maze, setMaze ] = useState<Maze | undefined>(undefined);
+  const [ done, setDone ] = useState(false);
+
   useEffect(() => {
     return generateMazeStream({
       width, height, timeout,
-      callback: m => setMaze(m)
+      callback: (m, d) => {
+        setMaze(m);
+        setDone(d);
+      }
     });
   }, [width, height, animated, timeout]);
 
-  return [ maze ];
+  return [ maze, done ];
 };
 
 export default useMaze;

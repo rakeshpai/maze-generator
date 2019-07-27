@@ -2,9 +2,7 @@ import React from 'react';
 import Maze from './Maze';
 
 const App: React.FC = () => (
-  <div>
-    <Maze />
-  </div>
+  <Maze />
 );
 
 export default App;

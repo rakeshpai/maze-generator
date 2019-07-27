@@ -8,10 +8,10 @@ type CellProps = {
   isCurrent: boolean
 };
 
-const x = (cell: CellType) => cell.x;
-const y = (cell: CellType) => cell.y;
-const incx = (cell: CellType) => cell.x + 1;
-const incy = (cell: CellType) => cell.y + 1;
+const x = (cell: CellType) => cell.y;
+const y = (cell: CellType) => cell.x;
+const incx = (cell: CellType) => cell.y + 1;
+const incy = (cell: CellType) => cell.x + 1;
 
 const cellCoords = {
   top: { x1: x, y1: y, x2: incx, y2: y },
@@ -30,7 +30,7 @@ const cellLines = ({ cell, cellWidth, cellHeight }: CellProps) =>
             ...acc,
             [key]: fn(cell) * (key.startsWith('x') ? cellWidth : cellHeight)
           }),
-          { key: location, ['data-direction']: location }
+          { key: location }
         )
     )
     .map(coords => (
@@ -45,8 +45,8 @@ const Cell: React.FC<CellProps> = props => (
   <g>
     {!props.cell.visited && (
       <rect
-        x={props.cell.x * props.cellWidth}
-        y={props.cell.y * props.cellHeight}
+        x={props.cell.y * props.cellWidth}
+        y={props.cell.x * props.cellHeight}
         width={props.cellWidth}
         height={props.cellHeight}
         fill={props.isCurrent ? 'red' : '#eee'}
@@ -55,13 +55,14 @@ const Cell: React.FC<CellProps> = props => (
 
     {props.isCurrent && (
       <rect
-        x={props.cell.x * props.cellWidth}
-        y={props.cell.y * props.cellHeight}
+        x={props.cell.y * props.cellWidth}
+        y={props.cell.x * props.cellHeight}
         width={props.cellWidth}
         height={props.cellHeight}
         fill='red'
       />
     )}
+    
     {cellLines(props)}
   </g>
 );

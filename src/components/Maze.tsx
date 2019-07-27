@@ -11,24 +11,23 @@ type Props = {
 };
 
 const Maze: React.FC<Props> = ({
-  width = 200,
-  height = 200,
+  width = 300,
+  height = 300,
   cellWidth = 20,
   cellHeight = 20
 }) => {
-  const [ maze ] = useMaze({
+  const [ maze, done ] = useMaze({
     width: Math.floor(width / cellWidth),
     height: Math.floor(height / cellHeight),
     timeout: 100, animated: true
   });
 
-  console.log(maze);
   return (
     <svg width={width} height={height}>
       {maze && maze.cells.map(cell => (
         <Cell
           cell={cell}
-          isCurrent={isCurrent(cell)(maze)}
+          isCurrent={!done && isCurrent(cell)(maze)}
           cellWidth={cellWidth}
           cellHeight={cellHeight}
           key={`cell-${cell.x}-${cell.y}`}

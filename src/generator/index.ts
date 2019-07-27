@@ -36,12 +36,12 @@ export const generateMaze = ({ width, height }: MazeDimensions) => {
 
 export const generateMazeStream = ({ width, height, timeout, callback }: MazeStreamArguments) => {
   let maze = initializeMaze(width, height);
-  callback(maze, hasUnvisitedCells(maze));
+  callback(maze, !hasUnvisitedCells(maze));
 
   const interval = setInterval(() => {
     if(hasUnvisitedCells(maze)) {
       maze = makeMazePass(maze);
-      callback(maze, hasUnvisitedCells(maze));
+      callback(maze, !hasUnvisitedCells(maze));
     } else {
       clearInterval(interval);
     }
