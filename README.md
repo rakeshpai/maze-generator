@@ -1,4 +1,4 @@
-# Map Generator
+# Maze Generator
 
 [Launch](https://rakeshpai.github.io/maze-generator)
 
